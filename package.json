@@ -1,0 +1,39 @@
+{
+  "name": "Croox__conditional-blocks_wp-plugin",
+  "displayName": "Croox Conditional Blocks",
+  "funcPrefix": "ccobo",
+  "uri": "https://github.com/croox/Croox__conditional-blocks_wp-plugin",
+  "textDomain": "ccobo",
+  "domainPath": "/languages",
+  "version": "0.0.0",
+  "description": "Hide Blocks conditionally",
+  "main": "index.js",
+  "author": "croox",
+  "authorUri": "https://github.com/croox",
+  "projectType": "plugin",
+  "contributors": "croox",
+  "license": "GNU General Public License v2 or later",
+  "licenseUri": "http://www.gnu.org/licenses/gpl-2.0.html",
+  "tags": "gutenberg,block,condition,if",
+  "donateLink": "https://github.com/croox/donate",
+  "repositoryUri": "https://github.com/croox/Croox__conditional-blocks_wp-plugin",
+  "wpVersionTested": "5.4.0",
+  "wpRequiresAtLeast": "5.0.0",
+  "phpRequiresAtLeast": "5.6.0",
+  "generator": {
+    "version": "0.15.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "grunt": "^1.1.0",
+    "wp-dev-env-grunt": "git+ssh://git@github.com/croox/wp-dev-env-grunt.git#0.9.10"
+  },
+  "browserify-shim": {
+    "jquery": "global:jQuery",
+    "react": "global:React",
+    "react-dom": "global:ReactDOM",
+    "lodash": "global:lodash"
+  }
+}
