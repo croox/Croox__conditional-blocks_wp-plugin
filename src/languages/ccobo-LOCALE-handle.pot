@@ -1,0 +1,56 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+"X-Generator: babel-plugin-makepot\n"
+
+#: src/js/ccobo_editor.js:62
+msgid "Conditionally Display"
+msgstr ""
+
+#: src/js/ccobo_editor.js:68
+msgid "Hide if conditions are true"
+msgstr ""
+
+#: src/js/ccobo_editor/components/Conditions.jsx:141
+msgid "Choose Condition"
+msgstr ""
+
+#: src/js/ccobo_editor/components/Conditions.jsx:229
+msgid "Toogle Relation"
+msgstr ""
+
+#: src/js/ccobo_editor/components/Conditions.jsx:235
+msgid "Add Condition to Group"
+msgstr ""
+
+#: src/js/ccobo_editor/components/Conditions.jsx:239
+msgid "Add Nested Group"
+msgstr ""
+
+#: src/js/ccobo_editor/components/Conditions.jsx:243
+msgid "Remove Group"
+msgstr ""
+
+#: src/js/ccobo_editor/components/Conditions.jsx:272
+msgid "Toogle Logical NOT"
+msgstr ""
+
+#: src/js/ccobo_editor/components/Conditions.jsx:278
+msgid "Remove Condition"
+msgstr ""
+
+#: src/js/ccobo_editor/types/type_currentUser.js:60
+msgid "Name"
+msgstr ""
+
+#: src/js/ccobo_editor/types/type_currentUser.js:61
+msgid "Slug"
+msgstr ""
+
+#: src/js/ccobo_editor/types/type_currentUser.js:66
+msgid "User Property"
+msgstr ""
+
+#: src/js/ccobo_editor/types/type_currentUser.js:73
+msgid "ID"
+msgstr ""
