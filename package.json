@@ -5,7 +5,7 @@
   "uri": "https://github.com/croox/Croox__conditional-blocks_wp-plugin",
   "textDomain": "ccobo",
   "domainPath": "/languages",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Hide Blocks conditionally",
   "main": "index.js",
   "author": "croox",
