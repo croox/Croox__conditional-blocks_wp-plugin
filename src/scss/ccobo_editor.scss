@@ -1,0 +1,201 @@
+$itemSpacing: 12px;
+$drag_handle_size: 20px;
+
+$gray: #cfd4db;
+$color_group_bg: rgba(113, 189, 69, 0.1);
+
+$dropLine_color: #007bff;
+$dropLine_size: 6px;
+
+
+
+.ccobo-controls {
+
+    &-wrapper .components-panel__body-toggle .components-panel__icon {
+        order: -1;
+        margin-right: 1rem;
+    }
+
+    .components-button {
+        padding: 6px 8px;
+    }
+    .item, .group, .heading {
+        > .components-button {
+            box-shadow: none !important;
+        }
+    }
+
+    .heading .components-button {
+        padding: 6px 0px;
+        min-width: 12px;
+        text-align: center;
+        display: inline;
+    }
+
+
+    // .item,
+    .heading{
+        position: relative;
+        & > * {
+            flex-grow: 0;
+            margin: 0 !important;
+        }
+    }
+    .spacer {
+        flex-grow: 1 !important;
+    }
+
+    .drag-handle {
+        display: inline-block;
+
+        &, & > * {
+            cursor: grab;
+        }
+
+        width: $drag_handle_size;
+
+        &-icon {
+            position: relative;
+
+            &, &:before {
+                display: block;
+            }
+
+            &:before {
+                content: '=';
+            }
+        }
+    }
+
+    .header .drag-handle {
+        position: relative;
+        bottom: unset;
+    }
+
+    .item.placeholder .drag-handle {
+        visibility: hidden;
+    }
+
+
+    .item {
+        flex-wrap: wrap;
+
+        & > .heading {
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+
+        &-inner {
+            width: 100%;
+
+            .components-base-control {
+                margin-bottom: 8px;
+            }
+
+            &.condition {
+                margin-top: 12px;
+                padding-top: 12px;
+                border-top: 1px solid $gray;
+            }
+        }
+
+    }
+
+
+
+	.dropLine {
+		height: 2px;
+		background-color: $dropLine_color;
+	}
+
+	.toogle-not {
+	    opacity: 0.25;
+	    &.is-not {
+	        color: red;
+	        opacity: 1;
+	    }
+	}
+
+
+
+	/**
+     * https://github.com/jagaapple/react-sortful/blob/master/stories/2-nested-vertical/shared/common.css
+     */
+	.wrapper {
+
+		width: 512px;
+		max-width: 100%;
+	}
+
+	.group {
+		padding: 0 $itemSpacing calc(#{ $itemSpacing } / 2);
+		border: 1px solid $gray;
+		border-radius: 4px;
+		background-color: $color_group_bg;
+	}
+	.group.placeholder {
+		border-style: dashed;
+		border-color: $gray;
+		background-color: transparent;
+		opacity: 0.5;
+	}
+	.group.ghost {
+		border-color: transparentize( $gray, 0.5 );
+		background-color: transparentize( $color_group_bg, 0.5 );
+	}
+	.group .heading {
+		display: inline-flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 4px;
+		padding: 8px 0 0;
+		font-size: 12px;
+		font-weight: bold;
+		line-height: 1.4;
+		width: calc(100% - #{ $drag_handle_size });
+		& > * {
+		    flex-grow: 0;
+		}
+	}
+
+	.item {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 8px;
+		min-height: 48px;
+		border: 1px solid $gray;
+		border-radius: 4px;
+		background-color: white;
+	}
+
+	.item.placeholder {
+		color: $gray;
+		border-style: dashed;
+		background-color: transparent;
+	}
+	.wrapper.disabled .item {
+		color: $gray;
+	}
+	.item.ghost.static {
+		background-color: transparentize( $color_group_bg, 0.5 );
+	}
+
+	.ghost {
+		box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+		width: 100%;
+		height: 100%;
+		opacity: 0.9;
+		animation-name: ghostItemVisible;
+		animation-duration: 200ms;
+		animation-fill-mode: forwards;
+	}
+	@keyframes ghostItemVisible {
+		0% {
+			transform: scale(1);
+		}
+		100% {
+			transform: scale(0.8);
+		}
+	}
+}

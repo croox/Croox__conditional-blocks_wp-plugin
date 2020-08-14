@@ -7,43 +7,49 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-use croox\wde;
+use croox\wde\Plugin;
+use croox\wde\utils\Arr;
 
-class Ccobo extends wde\Plugin {
+class Ccobo extends Plugin {
 
 	public function hooks(){
         parent::hooks();
-
-        // // Fix WPML global active language variable for REST Requests.
-        // if ( class_exists( 'SitePress' ) ) {
-        // 	add_action( 'after_setup_theme', array( 'croox\wde\utils\Wpml', 'rest_setup_switch_lang' ) );
-        // }
-
-		// add_action( 'init', array( $this, 'do_something_on_init' ), 10 );
+		add_action( 'current_screen', array( $this, 'enqueue_assets_editor' ), 10 );
+		add_action( 'render_block', array( $this, 'render_block' ), 10, 2 );
 	}
 
-	// public function do_something_on_init(){
-	// 	// ...
-	// }
+	public function enqueue_assets_editor( $screen ){
+		if ( ! is_admin() || 'post' !== $screen->base )
+			return;
 
-	// public function enqueue_scripts_admin(){
-    //     parent::enqueue_scripts_admin();
+		$handle = $this->prefix . '_editor';
 
-    //     $handle = $this->prefix . '_script_admin';
+		$this->register_script( array(
+			'handle'		=> $handle,
+			'deps'			=> array(
+				'wp-hooks',
+				'wp-data',
+				'wp-i18n',
+				'wp-blocks',
+				'wp-dom-ready',
+				'wp-edit-post',
+			),
+			'in_footer'		=> true,	// default false
+			'enqueue'		=> true,
+			// 'localize_data'	=> array(),
+		) );
 
-    //     $this->register_script( array(
-	// 		'handle'	=> $handle,
-	// 		'deps'		=> array(
-	// 			'jquery',
-	// 			// 'wp-hooks',
-	// 			// 'wp-api',
-	// 			// 'wp-data',
-	// 			// 'wp-i18n',
-	// 		),
-	// 		'in_footer'	=> true,	// default false
-	// 		'enqueue'	=> true,
-	// 	) );
+		$this->register_style( array(
+			'handle'	=> $handle,
+			'enqueue'	=> true,
+		) );
 
-	// }
+	}
+
+	public function render_block( $content, $block ) {
+		$conditions = Arr::get( $block, array( 'attrs', 'ccoboConditions' ), array() );
+		$hidden = ccobo_is_hidden( $conditions );
+		return $hidden ? '' : $content;
+	}
 
 }
