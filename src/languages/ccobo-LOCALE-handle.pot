@@ -15,27 +15,27 @@ msgstr ""
 msgid "Choose Condition"
 msgstr ""
 
-#: src/js/ccobo_editor/components/Conditions.jsx:229
+#: src/js/ccobo_editor/components/Conditions.jsx:227
 msgid "Toogle Relation"
 msgstr ""
 
-#: src/js/ccobo_editor/components/Conditions.jsx:235
+#: src/js/ccobo_editor/components/Conditions.jsx:233
 msgid "Add Condition to Group"
 msgstr ""
 
-#: src/js/ccobo_editor/components/Conditions.jsx:239
+#: src/js/ccobo_editor/components/Conditions.jsx:237
 msgid "Add Nested Group"
 msgstr ""
 
-#: src/js/ccobo_editor/components/Conditions.jsx:243
+#: src/js/ccobo_editor/components/Conditions.jsx:241
 msgid "Remove Group"
 msgstr ""
 
-#: src/js/ccobo_editor/components/Conditions.jsx:272
+#: src/js/ccobo_editor/components/Conditions.jsx:270
 msgid "Toogle Logical NOT"
 msgstr ""
 
-#: src/js/ccobo_editor/components/Conditions.jsx:278
+#: src/js/ccobo_editor/components/Conditions.jsx:276
 msgid "Remove Condition"
 msgstr ""
 

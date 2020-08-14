@@ -3,7 +3,7 @@
 	Plugin Name: Croox Conditional Blocks
 	Plugin URI: https://github.com/croox/Croox__conditional-blocks_wp-plugin
 	Description: Hide Blocks conditionally
-	Version: 0.0.1
+	Version: 0.0.2
 	Author: croox
 	Author URI: https://github.com/croox
 	License: GNU General Public License v2 or later
@@ -31,7 +31,7 @@ include_once( dirname( __FILE__ ) . '/vendor/autoload.php' );
 function ccobo_init() {
 
 	$init_args = array(
-		'version'		=> '0.0.1',
+		'version'		=> '0.0.2',
 		'slug'			=> 'Croox__conditional-blocks_wp-plugin',
 		'name'			=> 'Croox Conditional Blocks',
 		'prefix'		=> 'ccobo',
