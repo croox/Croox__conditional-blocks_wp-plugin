@@ -30,5 +30,11 @@ Upload and install this Theme the same way you'd install any other Theme.
 
 ## Changelog ##
 
+## 0.0.2 - 2020-08-14
+Fix add nested group
+
+### Fixed
+- Add nested group
+
 ## 0.0.1 - 2020-08-14
 First steps

@@ -1,8 +1,3 @@
 {
-  "changes": [
-    {
-      "type": "fixed",
-      "message": "Add nested group"
-    }
-  ]
+  "changes": []
 }
