@@ -176,7 +176,7 @@ const ListItem = ( {
 		setItems( items );
 	};
 	const addGroup = () => {
-		const conditionTypeGroup = conditionTypes.find( a => 'ccobo.group' === a.name );
+		const conditionTypeGroup = getConditionTypes().find( a => 'ccobo.group' === a.name );
 		item.children.push( {
 			type: conditionTypeGroup.name,
 			id: shortid(),
@@ -189,8 +189,6 @@ const ListItem = ( {
 		setItems( items );
 	};
 	const updateItem = ( newProps, newType ) => {
-		console.log( 'debug updateItem', newProps, newType );		// ??? debug
-
 		if ( newProps ) {
 			item.props = {
 				...item.props,
