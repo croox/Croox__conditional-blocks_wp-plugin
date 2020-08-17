@@ -81,6 +81,7 @@ addFilter( 'ccobo.component.' + newType.name, 'ccobo.component.' + newType.name,
 			'name',
 			'slug',
 		].map( k => k === key ? <TextControl
+			key={ k }
 			label={ [...options].find( o => k === o.value ).label }
 			value={ get( item, ['props',k] ) }
 			onChange={ val => updateItem( { [k]: val } ) }

@@ -31,6 +31,8 @@ const hiddenReducer = ( result, condition ) => {
 	result = applyFilters( 'ccobo.test.' + condition.type, result, condition );
 	return true === condition.props.not ? ! result : result;
 }
-const isHidden = conditions => [...conditions].reduce( hiddenReducer, false );
+const isHidden = conditions => Array.isArray( conditions )
+	? [...conditions].reduce( hiddenReducer, false )
+	: false;
 
 export default isHidden;

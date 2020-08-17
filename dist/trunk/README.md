@@ -30,6 +30,12 @@ Upload and install this Theme the same way you'd install any other Theme.
 
 ## Changelog ##
 
+## 0.0.3 - 2020-08-17
+Fix sorting drag n drop
+
+### Fixed
+- Sorting drag n drop
+
 ## 0.0.2 - 2020-08-14
 Fix add nested group
 

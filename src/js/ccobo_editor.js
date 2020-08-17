@@ -23,6 +23,7 @@ const {
 import Conditions 	from './ccobo_editor/components/Conditions.jsx';
 import isHidden		from './ccobo_editor/utils/isHidden';
 import * as types 	from './ccobo_editor/types';
+import { rootItemDefault } from './ccobo_editor/constants'
 
 /**
  * Add `ccoboConditions` to Block attributes.
@@ -49,8 +50,8 @@ addFilter( 'editor.BlockEdit', 'ccobo.addControls', createHigherOrderComponent( 
 		setAttributes,
 	} = props
 
-	const ccoboConditions = Array.isArray( attributes.ccoboConditions ) ? attributes.ccoboConditions : [];
-	const hidden = isHidden( ccoboConditions );
+	const items = Array.isArray( attributes.ccoboConditions ) ? attributes.ccoboConditions : [rootItemDefault];
+	const hidden = isHidden( items );
 
 	return <Fragment>
 		<div style={ { ...( hidden && { opacity: '0.25' } ) } }>
@@ -68,7 +69,7 @@ addFilter( 'editor.BlockEdit', 'ccobo.addControls', createHigherOrderComponent( 
 					label={ __( 'Hide if conditions are true', 'ccobo' ) }
 				>
 					<Conditions
-						items={ ccoboConditions }
+						items={ items }
 						setItems={ newItems => setAttributes( { ccoboConditions: cloneDeep( newItems ) } ) }
 					/>
 				</BaseControl>

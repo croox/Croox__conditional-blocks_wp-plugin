@@ -8,7 +8,7 @@ import {
 } from 'react-sortful';
 import classnames from "classnames";
 import shortid from "shortid";
-import { get } from "lodash";
+import { get, isInteger, cloneDeep } from "lodash";
 import arrayMove from "array-move";
 
 /**
@@ -25,24 +25,13 @@ const {
 	SelectControl,
 } = wp.components;
 
-// Constants
-
-const rootItemId = "root";
-
-const itemDefault = {
-	type: '',
-	id: shortid(),
-	props: {},
-	children: undefined,
-};
-
-const rootItemDefault = {
-	type: 'ccobo.group',
-	id: rootItemId,
-	props: { relation: 'OR', },
-	children: [],
-};
-
+/**
+ * Internal dependencies
+ */
+import {
+	rootItemId,
+	itemDefault,
+} from '../constants'
 
 // Helper
 
@@ -245,7 +234,7 @@ const ListItem = ( {
 				</div>
 				{ [...item.children].map( ( item, index ) => <ListItem
 					key={ item.id }
-					index={ item.id }
+					index={ index }
 					item={ item }
 					items={ items }
 					setItems={ setItems }
@@ -301,8 +290,6 @@ export const Conditions = ( {
 	setItems,
 } ) => {
 
-	items = items && Array.isArray( items ) && items.length ? items : [rootItemDefault];
-
 	const ItemGhost = ( {
 		identifier,
 		isGroup,
@@ -350,7 +337,7 @@ export const Conditions = ( {
 		)
 			return;
 
-		const newItems = [...items];
+		const newItems = cloneDeep( items );
 		const item = findItem( newItems, identifier );
 		if ( item == undefined )
 			return;
@@ -363,7 +350,9 @@ export const Conditions = ( {
 			groupItem.children = arrayMove(
 				groupItem.children,
 				index,
-				nextIndex ?? groupItem.children.length ?? 0,
+				isInteger( nextIndex )
+					? nextIndex
+					: groupItem.children.length > 0 ? groupItem.children.length : 0,
 			);
 		} else {
 			const nextGroupItem = findItem( newItems, nextGroupIdentifier );
@@ -394,7 +383,7 @@ export const Conditions = ( {
 	>
 		{ [...items].map( ( item, index ) => <ListItem
 			key={ item.id }
-			index={ item.id }
+			index={ index }
 			item={ item }
 			items={ items }
 			setItems={ setItems }
