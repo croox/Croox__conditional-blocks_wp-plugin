@@ -1,3 +1,8 @@
 {
-  "changes": []
+  "changes": [
+    {
+      "type": "fixed",
+      "message": "Sorting drag n drop"
+    }
+  ]
 }

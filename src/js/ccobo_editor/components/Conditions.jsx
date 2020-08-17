@@ -8,7 +8,7 @@ import {
 } from 'react-sortful';
 import classnames from "classnames";
 import shortid from "shortid";
-import { get } from "lodash";
+import { get, isInteger } from "lodash";
 import arrayMove from "array-move";
 
 /**
@@ -245,7 +245,7 @@ const ListItem = ( {
 				</div>
 				{ [...item.children].map( ( item, index ) => <ListItem
 					key={ item.id }
-					index={ item.id }
+					index={ index }
 					item={ item }
 					items={ items }
 					setItems={ setItems }
@@ -363,7 +363,9 @@ export const Conditions = ( {
 			groupItem.children = arrayMove(
 				groupItem.children,
 				index,
-				nextIndex ?? groupItem.children.length ?? 0,
+				isInteger( nextIndex )
+					? nextIndex
+					: groupItem.children.length > 0 ? groupItem.children.length : 0,
 			);
 		} else {
 			const nextGroupItem = findItem( newItems, nextGroupIdentifier );
@@ -394,7 +396,7 @@ export const Conditions = ( {
 	>
 		{ [...items].map( ( item, index ) => <ListItem
 			key={ item.id }
-			index={ item.id }
+			index={ index }
 			item={ item }
 			items={ items }
 			setItems={ setItems }
