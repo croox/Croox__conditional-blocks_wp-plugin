@@ -3,39 +3,39 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "X-Generator: babel-plugin-makepot\n"
 
-#: src/js/ccobo_editor.js:62
+#: src/js/ccobo_editor.js:63
 msgid "Conditionally Display"
 msgstr ""
 
-#: src/js/ccobo_editor.js:68
+#: src/js/ccobo_editor.js:69
 msgid "Hide if conditions are true"
 msgstr ""
 
-#: src/js/ccobo_editor/components/Conditions.jsx:141
+#: src/js/ccobo_editor/components/Conditions.jsx:130
 msgid "Choose Condition"
 msgstr ""
 
-#: src/js/ccobo_editor/components/Conditions.jsx:227
+#: src/js/ccobo_editor/components/Conditions.jsx:216
 msgid "Toogle Relation"
 msgstr ""
 
-#: src/js/ccobo_editor/components/Conditions.jsx:233
+#: src/js/ccobo_editor/components/Conditions.jsx:222
 msgid "Add Condition to Group"
 msgstr ""
 
-#: src/js/ccobo_editor/components/Conditions.jsx:237
+#: src/js/ccobo_editor/components/Conditions.jsx:226
 msgid "Add Nested Group"
 msgstr ""
 
-#: src/js/ccobo_editor/components/Conditions.jsx:241
+#: src/js/ccobo_editor/components/Conditions.jsx:230
 msgid "Remove Group"
 msgstr ""
 
-#: src/js/ccobo_editor/components/Conditions.jsx:270
+#: src/js/ccobo_editor/components/Conditions.jsx:259
 msgid "Toogle Logical NOT"
 msgstr ""
 
-#: src/js/ccobo_editor/components/Conditions.jsx:276
+#: src/js/ccobo_editor/components/Conditions.jsx:265
 msgid "Remove Condition"
 msgstr ""
 
