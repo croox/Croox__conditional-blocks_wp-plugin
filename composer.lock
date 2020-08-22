@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "83ae0ea97b59e4cdf0c5d8ca7b7090d5",
+    "content-hash": "7427765ca30d05e2bb464d047ab3ca1e",
     "packages": [],
     "packages-dev": [
         {
@@ -136,16 +136,16 @@
         },
         {
             "name": "croox/wp-dev-env-frame",
-            "version": "0.9.0",
+            "version": "0.11.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/croox/wp-dev-env-frame.git",
-                "reference": "09434ef541fc4df30c5a8abcb88853a7583cff34"
+                "reference": "fd102afb80d6e06af1bcf7dd3b8447f2db366bac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/croox/wp-dev-env-frame/zipball/09434ef541fc4df30c5a8abcb88853a7583cff34",
-                "reference": "09434ef541fc4df30c5a8abcb88853a7583cff34",
+                "url": "https://api.github.com/repos/croox/wp-dev-env-frame/zipball/fd102afb80d6e06af1bcf7dd3b8447f2db366bac",
+                "reference": "fd102afb80d6e06af1bcf7dd3b8447f2db366bac",
                 "shasum": ""
             },
             "type": "library",
@@ -166,10 +166,10 @@
             "description": "some frame for wp-dev-env",
             "homepage": "https://github.com/croox/wp-dev-env-frame",
             "support": {
-                "source": "https://github.com/croox/wp-dev-env-frame/tree/master",
+                "source": "https://github.com/croox/wp-dev-env-frame/tree/0.11.0",
                 "issues": "https://github.com/croox/wp-dev-env-frame/issues"
             },
-            "time": "2020-07-17T12:47:23+00:00"
+            "time": "2020-08-21T06:14:15+00:00"
         },
         {
             "name": "dealerdirect/phpcodesniffer-composer-installer",
@@ -563,9 +563,9 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "stability-flags": [],
-    "prefer-stable": false,
+    "prefer-stable": true,
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": []
