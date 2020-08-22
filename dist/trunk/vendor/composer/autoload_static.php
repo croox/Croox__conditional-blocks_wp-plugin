@@ -162,7 +162,16 @@ class ComposerStaticInita763b5a3d0733f9c967ad5adf8ea216f
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInita763b5a3d0733f9c967ad5adf8ea216f::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInita763b5a3d0733f9c967ad5adf8ea216f::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInita763b5a3d0733f9c967ad5adf8ea216f::$classMap;
+            if ( function_exists( "is_plugin_active" )
+              && false === strpos( __DIR__, "Croox__wp-dev-env-frame-loader_wp-plugin" )
+            	&& is_plugin_active( "Croox__wp-dev-env-frame-loader_wp-plugin/Croox__wp-dev-env-frame-loader_wp-plugin.php" )
+            ) {
+            	$loader->classMap = array_filter( ComposerStaticInita763b5a3d0733f9c967ad5adf8ea216f::$classMap, function( $path ) {
+            		return false === strpos( $path, "croox/wp-dev-env-frame" );
+            	} );
+            } else {
+            	$loader->classMap = ComposerStaticInita763b5a3d0733f9c967ad5adf8ea216f::$classMap;
+            }
 
         }, null, ClassLoader::class);
     }
