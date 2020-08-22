@@ -14,6 +14,8 @@ class Ccobo extends wde\Plugin {
 	public function hooks(){
         parent::hooks();
 
+		// $this->_include( 'css_properties' ); // Includes function ccobo_get_css_property
+
         // // Fix WPML global active language variable for REST Requests.
         // if ( class_exists( 'SitePress' ) ) {
         // 	add_action( 'after_setup_theme', array( 'croox\wde\utils\Wpml', 'rest_setup_switch_lang' ) );
