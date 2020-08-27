@@ -15,7 +15,7 @@ class Ccobo extends Plugin {
 	public function hooks(){
         parent::hooks();
 		add_action( 'current_screen', array( $this, 'enqueue_assets_editor' ), 10 );
-		add_action( 'render_block', array( $this, 'render_block' ), 10, 2 );
+		add_filter( 'render_block', array( $this, 'render_block' ), 10, 2 );
 	}
 
 	public function enqueue_assets_editor( $screen ){

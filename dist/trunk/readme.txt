@@ -30,6 +30,12 @@ Upload and install this Theme the same way you'd install any other Theme.
 
 == Changelog ==
 
+## 0.0.5 - 2020-08-27
+Add condition type `ccobo.dateTimeNow`
+
+### Added
+- Condition type `ccobo.dateTimeNow`
+
 ## 0.0.4 - 2020-08-22
 Updated to generator-wp-dev-env#0.16.0 ( wp-dev-env-grunt#0.11.1 wp-dev-env-frame#0.11.0 )
 

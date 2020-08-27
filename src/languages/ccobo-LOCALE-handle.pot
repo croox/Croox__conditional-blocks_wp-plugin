@@ -16,7 +16,7 @@ msgid "Choose Condition"
 msgstr ""
 
 #: src/js/ccobo_editor/components/Conditions.jsx:216
-msgid "Toogle Relation"
+msgid "Toggle Relation"
 msgstr ""
 
 #: src/js/ccobo_editor/components/Conditions.jsx:222
@@ -32,7 +32,7 @@ msgid "Remove Group"
 msgstr ""
 
 #: src/js/ccobo_editor/components/Conditions.jsx:259
-msgid "Toogle Logical NOT"
+msgid "Toggle Logical NOT"
 msgstr ""
 
 #: src/js/ccobo_editor/components/Conditions.jsx:265
@@ -53,4 +53,28 @@ msgstr ""
 
 #: src/js/ccobo_editor/types/type_currentUser.js:73
 msgid "ID"
+msgstr ""
+
+#: src/js/ccobo_editor/types/type_dateTimeNow.js:23
+msgid "After"
+msgstr ""
+
+#: src/js/ccobo_editor/types/type_dateTimeNow.js:24
+msgid "Before"
+msgstr ""
+
+#: src/js/ccobo_editor/types/type_dateTimeNow.js:30
+msgid "Date Time Now"
+msgstr ""
+
+#: src/js/ccobo_editor/types/type_dateTimeNow.js:72
+msgid "Date now"
+msgstr ""
+
+#: src/js/ccobo_editor/types/type_dateTimeNow.js:82
+msgid "Compare"
+msgstr ""
+
+#: src/js/ccobo_editor/types/type_dateTimeNow.js:89
+msgid "Date to compare"
 msgstr ""
