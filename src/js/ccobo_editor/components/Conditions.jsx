@@ -8,7 +8,7 @@ import {
 } from 'react-sortful';
 import classnames from "classnames";
 import shortid from "shortid";
-import { get, isInteger, cloneDeep } from "lodash";
+import { get, isInteger, cloneDeep, kebabCase } from "lodash";
 import arrayMove from "array-move";
 
 /**
@@ -209,11 +209,11 @@ const ListItem = ( {
 				{ rootItemId !== item.id && <DragHandle/> }
 				<div className={'heading'}>
 
-					<Tooltip text={ __( 'Toogle Logical NOT', 'ccobo' ) }>
-						<Button onClick={ () => toggleProp( 'not' ) } className={ classnames( 'toogle-not', ( item.props.not ? 'is-not' : '' ) ) }>{ '!' }</Button>
+					<Tooltip text={ __( 'Toggle Logical NOT', 'ccobo' ) }>
+						<Button onClick={ () => toggleProp( 'not' ) } className={ classnames( 'toggle-not', ( item.props.not ? 'is-not' : '' ) ) }>{ '!' }</Button>
 					</Tooltip>
 
-					<Tooltip text={ __( 'Toogle Relation', 'ccobo' ) }>
+					<Tooltip text={ __( 'Toggle Relation', 'ccobo' ) }>
 						<Button onClick={ () => toggleProp( 'relation' ) }>{ item.props.relation }</Button>
 					</Tooltip>
 
@@ -256,8 +256,8 @@ const ListItem = ( {
 			<DragHandle/>
 			<div className={'heading'}>
 
-				<Tooltip text={ __( 'Toogle Logical NOT', 'ccobo' ) }>
-					<Button onClick={ () => toggleProp( 'not' ) } className={ classnames( 'toogle-not', ( item.props.not ? 'is-not' : '' ) ) }>{ '!' }</Button>
+				<Tooltip text={ __( 'Toggle Logical NOT', 'ccobo' ) }>
+					<Button onClick={ () => toggleProp( 'not' ) } className={ classnames( 'toggle-not', ( item.props.not ? 'is-not' : '' ) ) }>{ '!' }</Button>
 				</Tooltip>
 
 				<span className={'spacer'}></span>
@@ -275,7 +275,7 @@ const ListItem = ( {
 				/>
 			</div>
 
-			{ ConditionInner && Nix !== ConditionInner && <div className="item-inner condition">
+			{ ConditionInner && Nix !== ConditionInner && <div className={"item-inner condition " + kebabCase( item.type ) }>
 				<ConditionInner
 					item={ item }
 					updateItem={ updateItem }
