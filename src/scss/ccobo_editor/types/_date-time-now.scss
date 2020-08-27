@@ -1,0 +1,47 @@
+.ccobo-controls {
+    .ccobo-date-time-now {
+        .components-base-control__label {
+            margin: 0 4px 0px 0px;
+        }
+
+        .pseudo-input {
+            box-shadow: 0 0 0 transparent;
+            border-radius: 4px;
+            border: 1px solid #7e8993;
+            background-color: #fff;
+            color: #32373c;
+            line-height: 2;
+            min-height: 30px;
+            padding: 2px;
+            margin-right: 1px;
+            text-align: center;
+            flex-grow: 1;
+        }
+
+        .flex-field > .components-base-control__field{
+            display: flex;
+            align-items: center;
+        }
+
+        .components-datetime {
+            &__time-wrapper {
+                justify-content: flex-end;
+                flex-wrap: wrap;
+            }
+            &__time-field {
+                margin-bottom: 4px;
+                &-month-select {
+                    padding: 0 0px 0 8px;
+                    min-height: 100%;
+                }
+                &-year {
+                    width: 66.6%;
+                    margin-right: 4px;
+                    &-input {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
