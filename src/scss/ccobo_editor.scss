@@ -1,3 +1,8 @@
+
+
+@import './ccobo_editor/types/date-time-now';
+
+
 $itemSpacing: 12px;
 $drag_handle_size: 20px;
 
@@ -9,6 +14,7 @@ $dropLine_size: 6px;
 
 
 
+// ??? TODO refactor!!!
 .ccobo-controls {
 
     &-wrapper .components-panel__body-toggle .components-panel__icon {
@@ -108,7 +114,7 @@ $dropLine_size: 6px;
 		background-color: $dropLine_color;
 	}
 
-	.toogle-not {
+	.toggle-not {
 	    opacity: 0.25;
 	    &.is-not {
 	        color: red;
