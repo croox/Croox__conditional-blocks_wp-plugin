@@ -10,6 +10,7 @@ function ccobo_include_fun() {
 	$paths = array(
 		'inc/fun/ccobo_is_hidden.php',
 		'inc/fun/ccobo_type_currentUser.php',
+		'inc/fun/ccobo_type_dateTimeNow.php',
 		'inc/fun/ccobo_type_true.php',
 	);
 
