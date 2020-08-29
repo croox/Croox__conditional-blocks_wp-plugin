@@ -3,11 +3,11 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "X-Generator: babel-plugin-makepot\n"
 
-#: src/js/ccobo_editor.js:63
+#: src/js/ccobo_editor.js:60
 msgid "Conditionally Display"
 msgstr ""
 
-#: src/js/ccobo_editor.js:69
+#: src/js/ccobo_editor.js:66
 msgid "Hide if conditions are true"
 msgstr ""
 
