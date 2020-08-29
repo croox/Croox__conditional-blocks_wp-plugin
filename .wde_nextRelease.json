@@ -1,3 +1,12 @@
 {
-  "changes": []
+  "changes": [
+    {
+      "type": "changed",
+      "message": "Remove BlockEdit wrapper div. Add class `ccobo-hidden` to BlockListBlock to change opacity.  "
+    },
+    {
+      "type": "fixed",
+      "message": "Conditions array got copied to the next selected Block. If next selected Block had empty conditions."
+    }
+  ]
 }

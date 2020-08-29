@@ -1,6 +1,7 @@
 /**
  * External dependencies
  */
+import classnames from 'classnames';
 import { cloneDeep } from 'lodash';
 
 /**
@@ -40,9 +41,8 @@ addFilter( 'blocks.registerBlockType', 'ccobo.addBlockAttributes', ( settings, n
 } ) );
 
 /**
- * Wrap BlockEdit functions.
- * - Wrap in a div, half transparent if Block is hidden.
- * - Add Conditions Control to Inspector
+ * Filter BlockEdit
+ * - Add Conditions Control to Inspector.
  */
 addFilter( 'editor.BlockEdit', 'ccobo.addControls', createHigherOrderComponent( BlockEdit => props => {
 	const {
@@ -50,13 +50,10 @@ addFilter( 'editor.BlockEdit', 'ccobo.addControls', createHigherOrderComponent( 
 		setAttributes,
 	} = props
 
-	const items = Array.isArray( attributes.ccoboConditions ) ? attributes.ccoboConditions : [rootItemDefault];
-	const hidden = isHidden( items );
+	const hidden = Array.isArray( attributes.ccoboConditions ) ? isHidden(  attributes.ccoboConditions ) : false;
 
 	return <Fragment>
-		<div style={ { ...( hidden && { opacity: '0.25' } ) } }>
-			<BlockEdit { ...props } />
-		</div>
+		<BlockEdit { ...props } />
 
 		<InspectorControls>
 			<PanelBody
@@ -69,7 +66,7 @@ addFilter( 'editor.BlockEdit', 'ccobo.addControls', createHigherOrderComponent( 
 					label={ __( 'Hide if conditions are true', 'ccobo' ) }
 				>
 					<Conditions
-						items={ items }
+						items={ Array.isArray( attributes.ccoboConditions ) ? attributes.ccoboConditions : cloneDeep([rootItemDefault]) }
 						setItems={ newItems => setAttributes( { ccoboConditions: cloneDeep( newItems ) } ) }
 					/>
 				</BaseControl>
@@ -77,3 +74,20 @@ addFilter( 'editor.BlockEdit', 'ccobo.addControls', createHigherOrderComponent( 
 		</InspectorControls>
 	</Fragment>;
 }, "withCcoboControls" ) );
+
+/**
+ * Filter BlockListBlock
+ * - Add className `ccobo-hidden`, if hidden.
+ */
+addFilter( 'editor.BlockListBlock', 'ccobo.test', createHigherOrderComponent( BlockListBlock => props => {
+	const {
+		attributes,
+	} = props
+
+	const hidden = Array.isArray( attributes.ccoboConditions ) ? isHidden(  attributes.ccoboConditions ) : false;
+
+	return <BlockListBlock { ...{
+		...props,
+		...( hidden && { className: classnames( props.className, 'ccobo-hidden' ) } ),
+	} } />;
+}, "withCcoboHiddenClass" ) );

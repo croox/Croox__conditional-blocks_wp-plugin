@@ -3,6 +3,11 @@
 @import './ccobo_editor/types/date-time-now';
 
 
+.ccobo-hidden {
+	opacity: 0.25;
+}
+
+
 $itemSpacing: 12px;
 $drag_handle_size: 20px;
 
