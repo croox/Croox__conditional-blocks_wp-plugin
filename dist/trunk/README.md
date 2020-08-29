@@ -30,6 +30,15 @@ Upload and install this Theme the same way you'd install any other Theme.
 
 ## Changelog ##
 
+## 0.0.6 - 2020-08-29
+Remove Block wrapper div, use class `ccobo-hidden` instead
+
+### Changed
+- Remove BlockEdit wrapper div. Add class `ccobo-hidden` to BlockListBlock to change opacity.
+
+### Fixed
+- Conditions array got copied to the next selected Block. If next selected Block had empty conditions.
+
 ## 0.0.5 - 2020-08-27
 Add condition type `ccobo.dateTimeNow`
 
